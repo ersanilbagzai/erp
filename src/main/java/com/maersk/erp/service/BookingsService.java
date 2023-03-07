@@ -37,10 +37,10 @@ public class BookingsService {
     }
 
     public BookContainerResponse bookContainer(BookingRequest request) {
-        //Integer bookingRef = BookingsUtils.getBookingRef();
+        Integer bookingRef = BookingsUtils.getBookingRef();
 
         Bookings booking = BookingsMapper.map(request);
-//        booking.setBookingRef(bookingRef);
+        booking.setBookingRef(bookingRef);
 
         Bookings savedBooking = bookingsRepository.save(booking);
         return BookContainerResponse.builder().bookingRef(savedBooking.getBookingRef().toString()).build();
