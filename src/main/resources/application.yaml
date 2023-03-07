@@ -1,0 +1,7 @@
+spring:
+  data:
+    cassandra:
+      keyspaceName: erp
+      port: 9042
+      schemaAction: CREATE_IF_NOT_EXISTS
+      local-datacenter: datacenter1
